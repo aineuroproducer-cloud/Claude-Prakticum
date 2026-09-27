@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Практикум Светланы Винокуровой: 20 коротких уроков по Claude — от настроек и чата до скиллов, коннекторов, Cowork и задач по расписанию. Живые разборы 2 раза в месяц.">
+<title>Claude: от новичка до ПРО — практикум Светланы Винокуровой</title>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Claude: от новичка до ПРО">
+<meta property="og:description" content="Научите Claude работать как сотрудник: с вашим контекстом, по вашему методу и на ваших задачах. 20 коротких уроков и живые разборы.">
+<!-- Когда у сайта появится домен, раскомментируйте и укажите полный адрес:
+<meta property="og:image" content="https://ВАШ-ДОМЕН/assets/svetlana-hero.jpg">
+<meta property="og:url" content="https://ВАШ-ДОМЕН/">
+-->
+<!-- Яндекс.Метрика: вставьте сюда код счётчика. Цели для кнопок размечены атрибутом data-goal — см. script.js. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d97757'/%3E%3Cg stroke='white' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M16 7v18M7 16h18M9.6 9.6l12.8 12.8M22.4 9.6 9.6 22.4'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Literata:ital,opsz,wght@1,7..72,400;1,7..72,500&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Наверх">
+      <span class="brand-mark" aria-hidden="true"><span class="spark"></span></span>
+      <span>Светлана Винокурова</span>
+    </a>
+    <nav aria-label="Основная навигация">
+      <a href="#program">Программа</a>
+      <a href="#tariffs">Тарифы</a>
+      <a href="#author">Автор</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="header-cta" href="#tariffs">Выбрать формат</a>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>Практикум</span> 20 коротких уроков · живые разборы 2&nbsp;раза в&nbsp;месяц</p>
+        <h1>Claude: от&nbsp;новичка до&nbsp;<em>ПРО</em></h1>
+        <p class="hero-lead">Claude может больше, чем отвечать на&nbsp;вопросы. Научим его работать как сотрудник: с&nbsp;вашим контекстом, по&nbsp;вашему методу и&nbsp;на&nbsp;ваших задачах.</p>
+        <p class="hero-price"><strong>от 4&nbsp;990&nbsp;₽</strong>&nbsp;— уроки, живые разборы и&nbsp;все обновления курса</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#tariffs" data-goal="hero_tariffs">Выбрать формат</a>
+          <a class="button button-outline" href="#program" data-goal="hero_program">Смотреть программу</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <span class="spark spark-deco" aria-hidden="true"></span>
+        <img src="assets/svetlana-hero.jpg" alt="Светлана Винокурова" width="700" height="925">
+        <p class="hero-note"><strong>Светлана Винокурова</strong><span>работаю с&nbsp;Claude больше двух лет, веду курс по&nbsp;нейросетям на&nbsp;MBA</span></p>
+      </div>
+    </section>
+
+    <section class="ladder-strip" aria-label="Путь по курсу">
+      <span>Чат</span><i class="spark" aria-hidden="true"></i><span>Проекты</span><i class="spark" aria-hidden="true"></i><span>Скиллы</span><i class="spark" aria-hidden="true"></i><span>Коннекторы</span><i class="spark" aria-hidden="true"></i><span>Cowork</span><i class="spark" aria-hidden="true"></i><span>Расписание</span><i class="spark" aria-hidden="true"></i><span>Ваши задачи</span>
+    </section>
+
+    <section class="section shell pains">
+      <div class="split-heading">
+        <div>
+          <p class="section-kicker"><i class="spark" aria-hidden="true"></i>Где буксует работа с&nbsp;Claude</p>
+          <h2>Пользуетесь Claude каждый день, <em>но&nbsp;всё равно дорабатываете каждый ответ?</em></h2>
+        </div>
+      </div>
+      <div class="pain-grid">
+        <article><i class="spark" aria-hidden="true"></i><h3>Каждый чат&nbsp;— с&nbsp;нуля</h3><p>Снова объясняете, кто вы, чем занимаетесь и&nbsp;как надо. Через неделю&nbsp;— опять.</p></article>
+        <article><i class="spark" aria-hidden="true"></i><h3>Ответ «вроде неплохо», но&nbsp;не&nbsp;ваш</h3><p>Приходится переписывать под свой стиль, свои данные и&nbsp;своего клиента.</p></article>
+        <article><i class="spark" aria-hidden="true"></i><h3>Скиллы, коннекторы, Cowork&nbsp;— слышали, но&nbsp;не&nbsp;пробовали</h3><p>Непонятно, с&nbsp;чего начать и&nbsp;нужно ли это именно вам.</p></article>
+        <article><i class="spark" aria-hidden="true"></i><h3>Лимиты заканчиваются к&nbsp;обеду</h3><p>Причём в&nbsp;самый неподходящий момент&nbsp;— посреди важной задачи.</p></article>
+        <article><i class="spark" aria-hidden="true"></i><h3>Черновик от&nbsp;Claude, а&nbsp;доделываете вы</h3><p>Структура презентации есть, выводы по&nbsp;таблице есть&nbsp;— но&nbsp;собрать слайды, свести цифры и&nbsp;довести до&nbsp;отправки всё равно приходится руками.</p></article>
+      </div>
+      <p class="pain-note">Всё это решается не&nbsp;новым сервисом, а&nbsp;порядком, в&nbsp;котором вы осваиваете Claude.</p>
+    </section>
+
+    <section class="section order">
+      <div class="shell order-layout">
+        <div class="order-copy">
+          <p class="section-kicker"><i class="spark" aria-hidden="true"></i>Как устроен курс</p>
+          <h2>Нельзя собрать агента, если вы <em>ещё не&nbsp;работали</em> в&nbsp;чате</h2>
+          <p>Я работаю с&nbsp;Claude больше двух лет и&nbsp;продолжаю учиться каждый день. Здесь не&nbsp;бывает «открыл один раз&nbsp;— и&nbsp;всё понял»: сначала были промпты в&nbsp;чате, потом проекты, потом скиллы, потом агентный режим. Сейчас этот путь можно пройти быстрее, чем прошла его я,&nbsp;— но&nbsp;пропустить его не&nbsp;получится.</p>
+          <p>Большинство курсов по&nbsp;Claude&nbsp;— это набор фишек: сегодня сайт, завтра презентация, послезавтра агент. Работает, пока повторяешь за&nbsp;автором. А&nbsp;на&nbsp;своей задаче всё рассыпается, потому что непонятно, на&nbsp;чём это держится.</p>
+          <p>Поэтому курс устроен как лестница, а&nbsp;не&nbsp;как набор приёмов. Каждая часть стоит на&nbsp;предыдущей. Перепрыгнуть ступень можно, но&nbsp;тогда всё сломается там, где вы этого не&nbsp;ждёте: скилл срабатывает через раз, агент путает файлы, а&nbsp;вы решаете, что «нейросети не&nbsp;работают». Хотя дело не&nbsp;в&nbsp;нейросети, а&nbsp;в&nbsp;пропущенной ступеньке.</p>
+        </div>
+        <ol class="stairs" aria-label="Ступени курса">
+          <li><span>1</span>Чат и&nbsp;настройки<small>части 1–2</small></li>
+          <li><span>2</span>Проекты<small>часть 3</small></li>
+          <li><span>3</span>Скиллы<small>часть 4</small></li>
+          <li><span>4</span>Коннекторы и&nbsp;MCP<small>часть 5</small></li>
+          <li><span>5</span>Cowork и&nbsp;задачи по&nbsp;расписанию<small>части 6–7</small></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section shell start">
+      <div class="split-heading">
+        <div>
+          <p class="section-kicker"><i class="spark" aria-hidden="true"></i>Перед стартом</p>
+          <h2>Начать можно <em>с&nbsp;любой точки</em></h2>
+        </div>
+      </div>
+      <div class="start-grid">
+        <article><h3>Аккаунта ещё нет?</h3><p>Покажу, как его оформить,&nbsp;— с&nbsp;этого начинается первый урок.</p></article>
+        <article><h3>Бесплатный аккаунт?</h3><p>Первые пять частей курса можно попробовать и&nbsp;на&nbsp;нём: чат, проекты (до&nbsp;пяти), скиллы, плагины, коннекторы и&nbsp;артефакты. Лимиты будут скромнее, но&nbsp;учиться можно.</p></article>
+        <article class="start-paid"><h3>Платная подписка</h3><p>От&nbsp;$20 в&nbsp;месяц&nbsp;— понадобится для Cowork и&nbsp;задач по&nbsp;расписанию, шестой и&nbsp;седьмой частей. К&nbsp;этому моменту вы уже будете понимать, зачем она вам.</p></article>
+        <article><h3>Компьютер</h3><p>Нужен для заданий. Смотреть уроки можно и&nbsp;с&nbsp;телефона.</p></article>
+      </div>
+    </section>
+
+    <section class="section program shell" id="program">
+      <div class="split-heading">
+        <div>
+          <p class="section-kicker"><i class="spark" aria-hidden="true"></i>Программа</p>
+          <h2>Восемь частей, <em>двадцать</em> уроков</h2>
+        </div>
+        <p>Каждый урок&nbsp;— от&nbsp;10 до&nbsp;30 минут: одна тема и&nbsp;одно действие, которое вы сразу повторяете у&nbsp;себя. Нажмите на&nbsp;часть, чтобы увидеть уроки.</p>
+      </div>
+      <p class="program-intro">Курс живой: Claude меняется, и&nbsp;уроки меняются следом. Всё, что я&nbsp;обновляю и&nbsp;дописываю, получают и&nbsp;те, кто купил раньше,&nbsp;— бесплатно.</p>
+      <div class="legend" aria-label="Обозначения"><span class="tag tag-upd">обновлён</span><span class="tag tag-new">новый</span><span class="tag tag-paid">нужна платная подписка</span></div>
+
+      <div class="phase">
+        <div class="phase-title"><span>Части 1–5 · можно на&nbsp;бесплатном аккаунте</span><h3>Основа: от&nbsp;чата до&nbsp;ваших данных</h3></div>
+        <ol class="module-list">
+          <li>
+            <details>
+              <summary><span class="module-number">1</span><span><span class="module-label">С&nbsp;чего начинается всё остальное</span><h3>Старт и&nbsp;база</h3><span class="module-teaser">2 урока · после части: Claude знает, кто вы, а&nbsp;лимитов хватает на&nbsp;рабочий день</span></span></summary>
+              <div class="module-body">
+                <ul class="lessons">
+                  <li><b>1.1</b><span>Доступ из&nbsp;России, регистрация, настройки: глобальная инструкция и&nbsp;память <span class="tag tag-upd">обновлён</span></span></li>
+                  <li><b>1.2</b><span>Лимиты и&nbsp;модели: Haiku, Sonnet, Opus&nbsp;— какую брать под задачу, чтобы лимита хватало до&nbsp;вечера <span class="tag tag-upd">обновлён</span></span></li>
+                </ul>
+                <div class="module-result"><span>После части</span><p>Claude, который знает, кто вы, и&nbsp;лимиты, которых хватает на&nbsp;рабочий день</p></div>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><span class="module-number">2</span><span><span class="module-label">Claude как собеседник, а&nbsp;не&nbsp;поисковик</span><h3>Продвинутый чат</h3><span class="module-teaser">2 урока · после части: нужный ответ за&nbsp;две-три итерации, а&nbsp;не&nbsp;за&nbsp;пятнадцать</span></span></summary>
+              <div class="module-body">
+                <ul class="lessons">
+                  <li><b>2.1</b><span>Чем Claude отличается от&nbsp;других: артефакты, файлы, Research, стили <span class="tag tag-upd">обновлён</span></span></li>
+                  <li><b>2.2</b><span>Запрос, итерация, критика, шаблон. Самоаудит ваших диалогов по&nbsp;24&nbsp;признакам AI&nbsp;Fluency</span></li>
+                </ul>
+                <div class="module-result"><span>После части</span><p>Умение добиваться нужного ответа за&nbsp;две-три итерации, а&nbsp;не&nbsp;за&nbsp;пятнадцать</p></div>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><span class="module-number">3</span><span><span class="module-label">Контекст один раз, а&nbsp;не&nbsp;в&nbsp;каждом чате заново</span><h3>Проекты</h3><span class="module-teaser">2 урока · после части: проекты под ваши направления</span></span></summary>
+              <div class="module-body">
+                <ul class="lessons">
+                  <li><b>3.1</b><span>Проект: инструкция, файлы, память проекта</span></li>
+                  <li><b>3.2</b><span>Как разложить работу по&nbsp;проектам: по&nbsp;клиентам, направлениям, задачам. Что делать, когда файлов много</span></li>
+                </ul>
+                <div class="module-result"><span>После части</span><p>Проекты под ваши направления, в&nbsp;которых не&nbsp;нужно объяснять всё с&nbsp;нуля</p></div>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><span class="module-number">4</span><span><span class="module-label">Claude работает по&nbsp;вашему методу, а&nbsp;не&nbsp;по&nbsp;общему</span><h3>Скиллы</h3><span class="module-teaser">4 урока · после части: первый собственный скилл</span></span></summary>
+              <div class="module-body">
+                <ul class="lessons">
+                  <li><b>4.1</b><span>Что такое скилл и&nbsp;как он устроен</span></li>
+                  <li><b>4.2</b><span>Skill Creator: первый скилл без кода</span></li>
+                  <li><b>4.3</b><span>Скилл из&nbsp;вашего промпта, процесса и&nbsp;материалов</span></li>
+                  <li><b>4.4</b><span>Готовые скиллы с&nbsp;GitHub: где брать и&nbsp;как проверить, что они безопасны</span></li>
+                </ul>
+                <div class="module-result"><span>После части</span><p>Первый собственный скилл&nbsp;— ваш рабочий метод, записанный один раз</p></div>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><span class="module-number">5</span><span><span class="module-label">Claude работает с&nbsp;вашими данными, а&nbsp;не&nbsp;в&nbsp;вакууме</span><h3>Коннекторы и&nbsp;MCP</h3><span class="module-teaser">2 урока · после части: Claude подключён к&nbsp;вашим файлам и&nbsp;сервисам</span></span></summary>
+              <div class="module-body">
+                <ul class="lessons">
+                  <li><b>5.1</b><span>Коннекторы и&nbsp;Claude в&nbsp;Chrome: Claude видит ваши файлы, почту и&nbsp;сервисы <span class="tag tag-new">новый</span></span></li>
+                  <li><b>5.2</b><span>MCP простыми словами: подключаем и&nbsp;разбираемся, что делать, если не&nbsp;работает <span class="tag tag-new">новый</span></span></li>
+                </ul>
+                <div class="module-result"><span>После части</span><p>Claude, подключённый к&nbsp;файлам и&nbsp;сервисам, с&nbsp;которыми вы работаете</p></div>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </div>
+
+      <div class="phase phase-paid">
+        <div class="phase-title"><span>Части 6–7 · нужна платная подписка</span><h3>Агентный режим: Claude делает сам</h3></div>
+        <ol class="module-list" start="6">
+          <li>
+            <details>
+              <summary><span class="module-number">6</span><span><span class="module-label">От&nbsp;«задавать вопросы» к&nbsp;«поручать задачи»</span><h3>Cowork</h3><span class="module-teaser">3 урока · после части: первая задача, которую Claude выполняет от&nbsp;начала до&nbsp;конца</span></span></summary>
+              <div class="module-body">
+                <ul class="lessons">
+                  <li><b>6.1</b><span>Установка, рабочая папка, плагин Productivity <span class="tag tag-upd">обновлён</span></span></li>
+                  <li><b>6.2</b><span>Три файла контекста: кто вы, над чем работаете и&nbsp;чего делать нельзя</span></li>
+                  <li><b>6.3</b><span>Проекты в&nbsp;Cowork и&nbsp;первая задача на&nbsp;ваших файлах от&nbsp;начала до&nbsp;конца <span class="tag tag-upd">обновлён</span></span></li>
+                </ul>
+                <div class="module-result"><span>После части</span><p>Первая задача, которую Claude выполняет от&nbsp;начала до&nbsp;конца на&nbsp;ваших файлах</p></div>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><span class="module-number">7</span><span><span class="module-label">Claude работает, пока вы заняты другим</span><h3>Задачи по&nbsp;расписанию</h3><span class="module-teaser">1 урок · после части: регулярные задачи, которые Claude делает сам</span></span></summary>
+              <div class="module-body">
+                <ul class="lessons">
+                  <li><b>7.1</b><span>Задачи, дашборд и&nbsp;Routines: утренняя сводка, мониторинг, отчёты без вашего участия <span class="tag tag-new">новый</span></span></li>
+                </ul>
+                <div class="module-result"><span>После части</span><p>Одна-две регулярные задачи, которые Claude делает сам по&nbsp;расписанию</p></div>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </div>
+
+      <div class="phase">
+        <div class="phase-title"><span>Часть 8 · практика</span><h3>Всё собранное&nbsp;— на&nbsp;настоящей работе</h3></div>
+        <ol class="module-list" start="8">
+          <li>
+            <details>
+              <summary><span class="module-number">8</span><span><span class="module-label">Ваши рабочие задачи</span><h3>Задачи, которые решает Claude</h3><span class="module-teaser">4 урока · после части: анализ аудитории, контент, презентация и&nbsp;разбор таблиц</span></span></summary>
+              <div class="module-body">
+                <ul class="lessons">
+                  <li><b>8.1</b><span>Анализ целевой аудитории пошагово</span></li>
+                  <li><b>8.2</b><span>Контент вашим голосом, а&nbsp;не&nbsp;«как у&nbsp;всех» <span class="tag tag-new">новый</span></span></li>
+                  <li><b>8.3</b><span>Презентация из&nbsp;ваших материалов: образец и&nbsp;файлы на&nbsp;входе <span class="tag tag-new">новый</span></span></li>
+                  <li><b>8.4</b><span>Большие таблицы и&nbsp;выгрузки: от&nbsp;данных к&nbsp;выводу <span class="tag tag-new">новый</span></span></li>
+                </ul>
+                <div class="module-result"><span>После части</span><p>Анализ аудитории, контент, презентация и&nbsp;разбор таблиц, собранные на&nbsp;ваших материалах</p></div>
+              </div>
+            </details>
+          </li>
+        </ol>
+      </div>
+
+      <p class="soon"><i class="spark" aria-hidden="true"></i><span>Следующие уроки войдут в&nbsp;курс без доплаты: Claude Design, контент-завод на&nbsp;Claude Code, прототип приложения или квиза.</span></p>
+
+      <div class="bonus-card">
+        <span class="spark spark-deco" aria-hidden="true"></span>
+        <p class="section-kicker">Бонусы</p>
+        <h3>Всё, что помогает не&nbsp;застрять</h3>
+        <div class="bonus-grid">
+          <article><strong>Мини-курс по&nbsp;промптингу</strong><p>Четыре раздела с&nbsp;заданиями&nbsp;— для тех, кто хочет подтянуть основу</p></article>
+          <article><strong>ИИ-ментор по&nbsp;Claude</strong><p>В&nbsp;NotebookLM, отвечает на&nbsp;вопросы по&nbsp;официальным материалам Anthropic</p></article>
+          <article><strong>Плагин «Аудитор и&nbsp;Аналитик»</strong><p>Находит задачи, которые стоит отдать ИИ, и&nbsp;раскладывает их&nbsp;по&nbsp;шагам</p></article>
+          <article><strong>Шаблоны трёх файлов контекста</strong><p>Для Cowork: заполняете под себя и&nbsp;сразу работаете</p></article>
+          <article><strong>Конспект к&nbsp;каждому уроку</strong><p>Промпты и&nbsp;шаги, чтобы не&nbsp;пересматривать видео</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section result-band">
+      <span class="spark spark-deco" aria-hidden="true"></span>
+      <div class="shell">
+        <div class="split-heading">
+          <div>
+            <p class="section-kicker"><i class="spark" aria-hidden="true"></i>Результат</p>
+            <h2>Что останется <em>после</em></h2>
+          </div>
+        </div>
+        <ul class="result-list">
+          <li><i class="spark" aria-hidden="true"></i><span><strong>Настроенный аккаунт</strong>&nbsp;— инструкция о&nbsp;вас, память, понятные лимиты</span></li>
+          <li><i class="spark" aria-hidden="true"></i><span><strong>Проекты под ваши задачи</strong>&nbsp;— вместо объяснений с&nbsp;нуля каждый раз</span></li>
+          <li><i class="spark" aria-hidden="true"></i><span><strong>Своя библиотека скиллов</strong>&nbsp;— ваш метод, записанный один раз</span></li>
+          <li><i class="spark" aria-hidden="true"></i><span><strong>Подключённые данные</strong>&nbsp;— файлы и&nbsp;сервисы, с&nbsp;которыми вы работаете</span></li>
+          <li><i class="spark" aria-hidden="true"></i><span><strong>Три файла контекста</strong>, из-за которых Claude ведёт себя как ваш, а&nbsp;не&nbsp;общий</span></li>
+          <li><i class="spark" aria-hidden="true"></i><span><strong>Регулярные задачи</strong>, которые Claude выполняет сам по&nbsp;расписанию</span></li>
+          <li><i class="spark" aria-hidden="true"></i><span><strong>Разобранные рабочие задачи</strong>&nbsp;— анализ аудитории, контент, презентация, таблицы</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section shell honest">
+      <div class="split-heading">
+        <div>
+          <p class="section-kicker"><i class="spark" aria-hidden="true"></i>Честно</p>
+          <h2>Что я&nbsp;делаю <em>и&nbsp;чего не&nbsp;делаю</em></h2>
+        </div>
+      </div>
+      <div class="fit-grid">
+        <article class="fit-yes"><p class="fit-label">Делаю</p><ul>
+          <li>Бываю в&nbsp;чате участников и&nbsp;отвечаю на&nbsp;короткие вопросы: «где эта кнопка», «почему не&nbsp;подключается»</li>
+          <li>Дважды в&nbsp;месяц разбираю большие вопросы на&nbsp;групповой встрече: присылаете их&nbsp;заранее через форму, запись остаётся у&nbsp;всех</li>
+          <li>На&nbsp;тарифе «С&nbsp;личной встречей» разбираю вашу ситуацию один на&nbsp;один</li>
+          <li>На&nbsp;тарифе «С&nbsp;проверкой» лично проверяю задание после каждой части и&nbsp;пишу, что именно не&nbsp;так</li>
+          <li>Показываю всё на&nbsp;своих рабочих задачах, а&nbsp;не&nbsp;на&nbsp;учебных примерах</li>
+          <li>Обновляю уроки, когда Claude меняется</li>
+        </ul></article>
+        <article class="fit-no"><p class="fit-label">Не&nbsp;делаю</p><ul>
+          <li>Не&nbsp;собираю за&nbsp;вас скиллы и&nbsp;агентов&nbsp;— подсвечиваю ошибки в&nbsp;том, что собрали вы</li>
+          <li>Не&nbsp;разбираю вашу ситуацию в&nbsp;переписке. Если вопрос требует показать экран или вникнуть в&nbsp;ваши задачи, присылайте его в&nbsp;форму: в&nbsp;чате такой ответ потеряется в&nbsp;ленте, а&nbsp;на&nbsp;разборе его услышат все</li>
+          <li>Не&nbsp;обещаю, что после курса задачи будут решаться без вас</li>
+        </ul></article>
+      </div>
+    </section>
+
+    <section class="section tariffs" id="tariffs">
+      <div class="shell">
+        <div class="split-heading">
+          <div>
+            <p class="section-kicker"><i class="spark" aria-hidden="true"></i>Форматы участия</p>
+            <h2>Один курс. <em>Разная глубина поддержки</em></h2>
+          </div>
+          <p>Уроки, материалы и&nbsp;обновления одинаковые во&nbsp;всех форматах. Разница&nbsp;— в&nbsp;том, сколько моего личного внимания вы получаете.</p>
+        </div>
+        <div class="tariff-grid">
+          <article class="tariff-card">
+            <div><p class="tariff-label">Самостоятельно</p><h3>Пройти курс в&nbsp;своём темпе</h3><p class="tariff-for">Для тех, кто готов проходить курс сам и&nbsp;задавать вопросы на&nbsp;разборах.</p></div>
+            <ul>
+              <li>20 уроков и&nbsp;все будущие обновления</li>
+              <li>бонусы: мини-курс по&nbsp;промптингу, ИИ-ментор, плагин «Аудитор и&nbsp;Аналитик», шаблоны</li>
+              <li>промпты, скиллы и&nbsp;шаблоны из&nbsp;уроков</li>
+              <li>задания после каждой части</li>
+              <li>групповые разборы вопросов 2&nbsp;раза в&nbsp;месяц в&nbsp;течение полугода: вопросы присылаете заранее, запись остаётся</li>
+              <li>чат участников</li>
+            </ul>
+            <div class="price"><strong>4&nbsp;990&nbsp;₽</strong><span>за весь курс</span></div>
+            <a class="button button-outline" href="#tariffs" data-link="pay_self" data-goal="tariff_self">Участвую</a>
+          </article>
+
+          <article class="tariff-card tariff-featured">
+            <div class="tariff-badge">Личный разбор</div>
+            <div><p class="tariff-label">С&nbsp;личной встречей</p><h3>Разобрать свою ситуацию со&nbsp;мной</h3><p class="tariff-for">Для тех, кто хочет разобрать свою ситуацию лично: с&nbsp;чего начать, что отдать Claude, где застряли.</p></div>
+            <ul>
+              <li>всё из&nbsp;формата «Самостоятельно»</li>
+              <li>личная встреча на&nbsp;60&nbsp;минут: записываетесь в&nbsp;течение месяца после оплаты</li>
+            </ul>
+            <div class="price"><strong>9&nbsp;990&nbsp;₽</strong><span>за весь курс</span></div>
+            <a class="button button-primary" href="#tariffs" data-link="pay_meeting" data-goal="tariff_meeting">Участвую</a>
+          </article>
+
+          <article class="tariff-card tariff-premium">
+            <div class="tariff-badge">Не&nbsp;более 5&nbsp;мест</div>
+            <div><p class="tariff-label">С&nbsp;проверкой</p><h3>Пройти курс с&nbsp;моей проверкой</h3><p class="tariff-for">Для тех, кому важно, чтобы кто-то посмотрел на&nbsp;сделанное и&nbsp;сказал, что не&nbsp;так,&nbsp;— до&nbsp;того, как ошибка уйдёт в&nbsp;работу.</p></div>
+            <ul>
+              <li>всё из&nbsp;формата «С&nbsp;личной встречей»</li>
+              <li>письменная проверка задания после каждой из&nbsp;восьми частей&nbsp;— с&nbsp;тем, что исправить</li>
+              <li>ответы на&nbsp;вопросы по&nbsp;заданиям&nbsp;— в&nbsp;личных комментариях к&nbsp;заданию</li>
+              <li>не&nbsp;более 5&nbsp;мест: проверяю каждую работу сама</li>
+            </ul>
+            <div class="price"><strong>19&nbsp;990&nbsp;₽</strong><span>за весь курс</span></div>
+            <a class="button button-dark" href="#tariffs" data-link="pay_review" data-goal="tariff_review">Участвую</a>
+          </article>
+        </div>
+        <p class="upgrade-note">Начали самостоятельно, а&nbsp;потом захотели встречу или проверку? Перейти на&nbsp;другой тариф можно в&nbsp;течение полугода после оплаты, доплатив разницу.</p>
+        <p class="tariff-legal">Оплачивая участие, вы принимаете условия <a href="oferta.html">публичной оферты</a> и&nbsp;<a href="privacy.html">политики обработки персональных данных</a>.</p>
+      </div>
+    </section>
+
+    <section class="section shell" id="author">
+      <div class="author">
+        <div class="author-head">
+          <img src="assets/svetlana-portrait.jpg" alt="Светлана Винокурова" width="560" height="700" loading="lazy">
+          <div class="author-title"><p class="section-kicker"><i class="spark" aria-hidden="true"></i>Кто ведёт</p><h2>Светлана Винокурова</h2><p>Маркетолог с&nbsp;2002 года, в&nbsp;онлайн-образовании с&nbsp;2016-го</p></div>
+        </div>
+        <div class="author-copy">
+          <p class="author-lead">Работаю с&nbsp;Claude каждый день&nbsp;— на&nbsp;своих и&nbsp;клиентских задачах. В&nbsp;курсе показываю то, что проверила на&nbsp;практике, а&nbsp;не&nbsp;пересказ чужих обзоров.</p>
+          <ul class="author-facts">
+            <li><strong>Преподаю</strong><span>Курс «Внедрение нейросетей в&nbsp;бизнес-процессы» на&nbsp;программах MBA в&nbsp;Высшей школе международного бизнеса Самарского университета им.&nbsp;С.&nbsp;П.&nbsp;Королёва. Модуль по&nbsp;ИИ-ассистентам и&nbsp;агентам для Школы карьерного менеджмента.</span></li>
+            <li><strong>Практикую</strong><span>Веду клиентские проекты как маркетолог&nbsp;— поэтому разбираю не&nbsp;учебные кейсы, а&nbsp;рабочие: выгрузки, отчёты, аналитику, контент. Работаю по&nbsp;первоисточникам&nbsp;— официальной документации разработчиков&nbsp;— и&nbsp;проверяю, что из&nbsp;этого действительно работает.</span></li>
+            <li><strong>Проверяю работы</strong><span>Продюсировала курс по&nbsp;промпт-инжинирингу: 150 участников на&nbsp;платных тарифах, больше тысячи прошли бесплатный модуль, два потока для селлеров Ozon. Все домашние задания разбирала лично.</span></li>
+            <li><strong>Обучаю команды</strong><span>Приборостроительное предприятие, судоходная компания, сеть офтальмологических клиник, промышленное производство. Четырёхдневные интенсивы для команд, программа под задачи заказчика. Названия не&nbsp;раскрываю по&nbsp;договорённости.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell reviews">
+      <div class="split-heading">
+        <div><p class="section-kicker"><i class="spark" aria-hidden="true"></i>Отзывы</p><h2>Что говорят участники <em>моих программ</em></h2></div>
+      </div>
+      <div class="reviews-grid">
+        <blockquote class="review-card"><p>«До обучения я вообще не&nbsp;понимала, на&nbsp;какой козе к&nbsp;нему подъехать&nbsp;— пробовала вслепую. А&nbsp;сейчас у&nbsp;меня пять агентов, которые офигенно снимают головную боль при работе с&nbsp;текстами и&nbsp;материалами. Вчера из&nbsp;трёхчасового вебинара я&nbsp;сделала детальную методичку, добавила свои кейсы и&nbsp;примеры&nbsp;— всё заняло 40&nbsp;минут. Сама бы делала пару дней. И&nbsp;я&nbsp;в&nbsp;роли проверяющего, а&nbsp;не&nbsp;делающего».</p><footer><strong>Наташа Муратова</strong><span>Методолог онлайн-курсов</span></footer></blockquote>
+        <blockquote class="review-card"><p>«Сразу после курса думала, что не&nbsp;буду использовать ИИ часто. А&nbsp;теперь почти каждый день что-то задействую. Вчера проводила обучение на&nbsp;конгрессе пациентских организаций&nbsp;— учила писать эффективные промпты. А&nbsp;перед лекцией в&nbsp;школе бизнеса сделала промпт для слушателей: они подставляли свои данные и&nbsp;получали описание задач и&nbsp;требований к&nbsp;должности, которую хотят занять через два года».</p><footer><strong>Мария Антилогова</strong><span>Карьерный консультант</span></footer></blockquote>
+        <blockquote class="review-card review-wide"><p>«Быстро понял, потому что уже изучал этот вопрос и&nbsp;кое-что знал. Изложение курса&nbsp;— чётко и&nbsp;кратко. Жаль, что не&nbsp;видел этого раньше: сэкономил&nbsp;бы кучу времени».</p><footer><strong>Семён Брындин</strong><span>Консультант, более 20&nbsp;лет разрабатывает и&nbsp;внедряет процессно-ориентированные информационные системы</span></footer></blockquote>
+      </div>
+    </section>
+
+    <section class="section faq shell" id="faq">
+      <p class="section-kicker"><i class="spark" aria-hidden="true"></i>Перед оплатой</p>
+      <h2>Частые вопросы</h2>
+      <div class="faq-list">
+        <details><summary>Я&nbsp;совсем новичок. Подойдёт?</summary><p>Да. Если аккаунта ещё нет, в&nbsp;первом уроке покажу, как его оформить, дальше начинаем с&nbsp;базы.</p></details>
+        <details><summary>Нужна ли платная подписка Claude?</summary><p>Не&nbsp;сразу. Первые пять частей&nbsp;— чат, проекты, скиллы, плагины и&nbsp;коннекторы&nbsp;— можно попробовать и&nbsp;на&nbsp;бесплатном аккаунте. Платная подписка (от&nbsp;$20 в&nbsp;месяц) нужна для Cowork и&nbsp;задач по&nbsp;расписанию&nbsp;— шестой и&nbsp;седьмой частей курса. Она оплачивается отдельно и&nbsp;в&nbsp;стоимость курса не&nbsp;входит.</p></details>
+        <details><summary>Нужно ли уметь программировать?</summary><p>Нет. Всё, что мы делаем, описывается обычными словами. Я&nbsp;сама не&nbsp;программист&nbsp;— я&nbsp;маркетолог, который двадцать лет работает с&nbsp;данными и&nbsp;текстами.</p></details>
+        <details><summary>Чем это отличается от&nbsp;бесплатных роликов про Claude?</summary><p>Ролики показывают отдельные приёмы. Здесь&nbsp;— порядок, в&nbsp;котором приёмы складываются в&nbsp;систему, задания на&nbsp;ваших задачах и&nbsp;разборы ваших вопросов.</p></details>
+        <details><summary>Есть живые встречи?</summary><p>Уроки в&nbsp;записи. Дважды в&nbsp;месяц в&nbsp;течение полугода после оплаты&nbsp;— групповой разбор вопросов: вы присылаете вопросы заранее, я&nbsp;отвечаю на&nbsp;встрече, запись получают все участники. На&nbsp;тарифах «С&nbsp;личной встречей» и&nbsp;«С&nbsp;проверкой» есть ещё личная встреча на&nbsp;60&nbsp;минут.</p></details>
+        <details><summary>Как устроена проверка заданий?</summary><p>На&nbsp;тарифе «С&nbsp;проверкой»&nbsp;— задание после каждой части, я&nbsp;разбираю его лично и&nbsp;пишу, что именно не&nbsp;так. Это не&nbsp;автопроверка и&nbsp;не&nbsp;«молодец, продолжайте». На&nbsp;других тарифах задания те&nbsp;же, а&nbsp;вопросы по&nbsp;ним можно принести на&nbsp;групповой разбор.</p></details>
+        <details><summary>Можно начать самостоятельно, а&nbsp;потом перейти на&nbsp;другой тариф?</summary><p>Да&nbsp;— доплатой разницы в&nbsp;течение полугода после оплаты. На&nbsp;тариф «С&nbsp;проверкой»&nbsp;— пока есть места.</p></details>
+        <details><summary>Claude меняется каждый месяц. Курс не&nbsp;устареет?</summary><p>Устаревает любой курс по&nbsp;Claude&nbsp;— вопрос в&nbsp;том, обновляется&nbsp;ли он. Я&nbsp;сама работаю в&nbsp;Claude каждый день, поэтому замечаю изменения сразу: переснимаю уроки, где поменялся интерфейс, и&nbsp;добавляю новые, когда появляются новые возможности. Все обновления участники получают бесплатно.</p></details>
+        <details><summary>Сколько времени занимает?</summary><p>Уроки короткие&nbsp;— от&nbsp;10 до&nbsp;30 минут, их удобно смотреть даже в&nbsp;перерыве. Основное время уходит не&nbsp;на&nbsp;просмотр, а&nbsp;на&nbsp;задания: закладывайте пару часов в&nbsp;неделю, иначе смысла нет.</p></details>
+        <details><summary>Можно&nbsp;ли обучить так команду?</summary><p>Да, для компаний я&nbsp;провожу корпоративные тренинги: программа под задачи вашей команды, на&nbsp;ваших процессах и&nbsp;документах. <a href="https://t.me/svechka_v" data-link="corporate" data-goal="faq_corporate">Напишите мне в&nbsp;Telegram</a>&nbsp;— обсудим, что нужно.</p></details>
+      </div>
+    </section>
+
+    <section class="final" id="final">
+      <span class="spark spark-deco d1" aria-hidden="true"></span>
+      <span class="spark spark-deco d2" aria-hidden="true"></span>
+      <div class="shell final-inner">
+        <h2>Пройти путь <em>по&nbsp;порядку</em></h2>
+        <p>Один раз собрать систему, которая работает на&nbsp;вас,&nbsp;— вместо того чтобы каждый раз объяснять всё заново.</p>
+        <p class="hero-price"><strong>от 4&nbsp;990&nbsp;₽</strong>&nbsp;— уроки, разборы вопросов и&nbsp;все обновления</p>
+        <div class="final-actions">
+          <a class="button button-light" href="#tariffs" data-goal="final_tariffs">Выбрать формат</a>
+          <a class="button button-ghost" href="https://t.me/svechka_v" data-link="question" data-goal="final_telegram">Задать вопрос в&nbsp;Telegram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-legal">
+    <p>Самозанятая Винокурова Светлана Анатольевна · ИНН 631107751247 · <a href="mailto:ai.neuroproducer@yandex.ru">ai.neuroproducer@yandex.ru</a></p>
+    <nav aria-label="Документы"><a href="oferta.html">Оферта</a><a href="privacy.html">Политика обработки ПД</a><a href="consent.html">Согласие на&nbsp;обработку ПД</a><a href="consent-ads.html">Согласие на&nbsp;рассылки</a></nav>
+  </div>
+  <p class="disclaimer">Практикум&nbsp;— авторский курс Светланы Винокуровой и&nbsp;не&nbsp;связан с&nbsp;компанией Anthropic. Claude&nbsp;— товарный знак Anthropic, PBC.</p>
+  <footer class="shell">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><span class="spark"></span></span><span>Claude: от&nbsp;новичка до&nbsp;ПРО</span></a>
+    <p>© 2026 Светлана Винокурова</p>
+    <a href="#top">Наверх ↑</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
