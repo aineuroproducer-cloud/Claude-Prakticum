@@ -9,7 +9,7 @@ const LINKS = {
 };
 
 // Номер счётчика Яндекс.Метрики — нужен, чтобы клики по кнопкам считались целями.
-const METRIKA_ID = 0;
+const METRIKA_ID = 113179487;
 
 const TELEGRAM = "https://t.me/svechka_v";
 const FALLBACK_TEXT = {
