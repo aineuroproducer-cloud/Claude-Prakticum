@@ -2,8 +2,8 @@
 // Пока адрес пустой, кнопка ведёт в Telegram к Светлане с готовым текстом.
 const LINKS = {
   pay_self: "https://t.me/neiroproducer_bot?start=c1790609957988-ds", // тариф «Самостоятельно», 4 990 ₽ — диплинк BotHelp
-  pay_meeting: "",  // оплата тарифа «С личной встречей», 9 990 ₽
-  pay_review: "",   // оплата тарифа «С проверкой», 19 990 ₽
+  pay_meeting: "https://t.me/neiroproducer_bot?start=c1790692258174-ds", // тариф «С личной встречей», 9 990 ₽ — диплинк BotHelp
+  pay_review: "https://t.me/neiroproducer_bot?start=c1790694430232-ds",  // тариф «С проверкой», 19 990 ₽ — диплинк BotHelp
   corporate: "",    // корпоративные тренинги (можно оставить пустым — будет Telegram)
   question: "",     // вопрос перед оплатой (можно оставить пустым — будет Telegram)
 };
