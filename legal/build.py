@@ -65,7 +65,7 @@ for slug,src in DOCS:
   </main>
   <footer class="shell">
     <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span class="spark"></span></span><span>Claude: от новичка до ПРО</span></a>
-    <p>Самозанятая Винокурова С. А., ИНН 631107751247</p>
+    <p>ИП Апакидзе К. Ю., ИНН 772608740084</p>
     <a href="index.html">На главную</a>
   </footer>
 </body>
