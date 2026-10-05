@@ -13,7 +13,7 @@
   var text = document.createElement("p");
   text.style.cssText = "margin:0;flex:1 1 280px";
   text.innerHTML = "Сайт использует файлы cookie и Яндекс.Метрику, чтобы понимать, как люди пользуются страницей. " +
-    "Подробнее — в&nbsp;<a href=\"privacy.html\" style=\"color:inherit;text-decoration:underline\">политике обработки персональных данных</a>.";
+    "Подробнее — в&nbsp;<a href=\"privacy\" style=\"color:inherit;text-decoration:underline\">политике обработки персональных данных</a>.";
 
   var btn = document.createElement("button");
   btn.type = "button";

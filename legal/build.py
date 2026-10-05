@@ -35,7 +35,7 @@ for slug,src in DOCS:
     flush()
     if inlist: body.append('</ul>')
     cur=' aria-current="page"'
-    nav=' '.join('<a href="%s.html"%s>%s</a>'%(k, cur if k==slug else '', v) for k,v in NAV)
+    nav=' '.join('<a href="%s"%s>%s</a>'%(k, cur if k==slug else '', v) for k,v in NAV)
     draft=f'<p class="legal-draft">{inline(meta["draft"])}</p>' if 'draft' in meta else ''
     page=f'''<!DOCTYPE html>
 <html lang="ru">
@@ -51,9 +51,9 @@ for slug,src in DOCS:
 </head>
 <body class="legal-page">
   <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span class="spark"></span></span><span>Claude: от новичка до ПРО</span></a>
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span class="spark"></span></span><span>Claude: от новичка до ПРО</span></a>
     <span></span>
-    <a class="header-cta" href="index.html">← На главную</a>
+    <a class="header-cta" href="/">← На главную</a>
   </header>
   <main class="legal shell">
     <nav class="legal-nav" aria-label="Документы">{nav}</nav>
@@ -64,9 +64,9 @@ for slug,src in DOCS:
     {"".join(chr(10)+"    "+b for b in body)}
   </main>
   <footer class="shell">
-    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span class="spark"></span></span><span>Claude: от новичка до ПРО</span></a>
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span class="spark"></span></span><span>Claude: от новичка до ПРО</span></a>
     <p>ИП Апакидзе К. Ю., ИНН 772608740084</p>
-    <a href="index.html">На главную</a>
+    <a href="/">На главную</a>
   </footer>
 </body>
 </html>
