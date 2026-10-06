@@ -1,16 +1,3 @@
 {
-  "cleanUrls": true,
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "claude-prakticum.vercel.app"
-        }
-      ],
-      "destination": "https://claude.neiroproducer.ru/:path*",
-      "permanent": true
-    }
-  ]
+  "cleanUrls": true
 }
