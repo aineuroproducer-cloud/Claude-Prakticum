@@ -1,0 +1,16 @@
+# Настройки для хостинга Рег.ру (Apache)
+RewriteEngine On
+
+# Всегда https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Адреса без .html: /oferta открывает oferta.html без перенаправления
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Служебные файлы не отдаём
+RedirectMatch 404 /(\.git|\.github|legal|README\.md|vercel\.json)
