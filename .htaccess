@@ -14,3 +14,9 @@ RewriteRule ^(.+?)/?$ $1.html [L]
 
 # Служебные файлы не отдаём
 RedirectMatch 404 /(\.git|\.github|legal|README\.md|vercel\.json)
+# Страницы, скрипты и стили браузер перепроверяет при каждом заходе, чтобы правки были видны сразу
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|js|css)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
