@@ -1,9 +1,9 @@
 // Ссылки для кнопок. Вставьте адрес между кавычками — кнопка сразу начнёт вести туда.
 // Пока адрес пустой, кнопка ведёт в Telegram к Светлане с готовым текстом.
 const LINKS = {
-  pay_self: "https://t.me/neiroproducer_bot?start=c1790609957988-ds", // тариф «Самостоятельно», 4 990 ₽ — диплинк BotHelp
-  pay_meeting: "https://t.me/neiroproducer_bot?start=c1790692258174-ds", // тариф «С личной встречей», 9 990 ₽ — диплинк BotHelp
-  pay_review: "https://t.me/neiroproducer_bot?start=c1790694430232-ds",  // тариф «С проверкой», 19 990 ₽ — диплинк BotHelp
+  pay_self: "https://neuroproducer.getplatinum.ru/payment/Gq4ehQz", // тариф «Самостоятельно», 4 990 ₽ — оплата GetPlatinum (через бота: https://t.me/neiroproducer_bot?start=c1790609957988-ds)
+  pay_meeting: "https://neuroproducer.getplatinum.ru/payment/7IAw66n", // тариф «С личной встречей», 9 990 ₽ — оплата GetPlatinum (через бота: https://t.me/neiroproducer_bot?start=c1790692258174-ds)
+  pay_review: "https://neuroproducer.getplatinum.ru/payment/qhu8tTs",  // тариф «С проверкой», 19 990 ₽ — оплата GetPlatinum (через бота: https://t.me/neiroproducer_bot?start=c1790694430232-ds)
   corporate: "",    // корпоративные тренинги (можно оставить пустым — будет Telegram)
   question: "",     // вопрос перед оплатой (можно оставить пустым — будет Telegram)
 };
