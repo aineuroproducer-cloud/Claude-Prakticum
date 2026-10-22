@@ -349,3 +349,5 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 @media (max-width: 640px) {
   .legal-page .site-header .brand > span:last-child { display: none; }
 }
+
+.price-old { display: block; font-size: 1rem; font-weight: 500; color: var(--ink-soft); text-decoration: line-through; margin-bottom: 2px; }
