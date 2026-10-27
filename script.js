@@ -45,3 +45,22 @@ document.querySelectorAll("details").forEach((item) => {
     });
   });
 });
+
+// Цели «Просмотр блока программы» и «Просмотр блока тарифов»:
+// срабатывают один раз за загрузку страницы, когда верх блока доходит до середины экрана
+(function () {
+  const blocks = { program: "view_program", tariffs: "view_tariffs" };
+  if (!("IntersectionObserver" in window)) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const goal = blocks[e.target.id];
+      if (goal && METRIKA_ID && typeof window.ym === "function") window.ym(METRIKA_ID, "reachGoal", goal);
+      obs.unobserve(e.target);
+    });
+  }, { rootMargin: "0px 0px -50% 0px" });
+  Object.keys(blocks).forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) obs.observe(el);
+  });
+})();
