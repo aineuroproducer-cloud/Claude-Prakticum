@@ -351,3 +351,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 }
 
 .price-old { display: block; font-size: 1rem; font-weight: 500; color: var(--ink-soft); text-decoration: line-through; margin-bottom: 2px; }
+.reviews-grid { align-items: start; }
+.review-source { margin-top: 14px; }
+.review-source summary { cursor: pointer; color: var(--clay-deep); font-size: 14px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; list-style: none; }
+.review-source summary::-webkit-details-marker { display: none; }
+.review-source img { display: block; width: 100%; max-width: 560px; height: auto; margin-top: 12px; border: 1px solid var(--rule); border-radius: 12px; }
+.review-card footer { min-height: auto; }
+.review-card .review-source { text-align: center; }
+.review-card .review-source img { margin-left: auto; margin-right: auto; }

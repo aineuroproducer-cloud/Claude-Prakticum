@@ -39,7 +39,7 @@ document.querySelectorAll("[data-goal]").forEach((link) => {
 document.querySelectorAll("details").forEach((item) => {
   item.addEventListener("toggle", () => {
     if (!item.open) return;
-    const group = item.closest(".faq-list, .program") || document;
+    const group = item.closest(".faq-list, .program, .reviews-grid") || document;
     group.querySelectorAll("details[open]").forEach((other) => {
       if (other !== item) other.open = false;
     });
